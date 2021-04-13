@@ -9,6 +9,7 @@ export default {
   name: 'Play',
   props: {},
   mounted () {
+    this.$music.MenuMusic.pause()
     this.$music.GameMusic.autoplay = true
     this.$music.GameMusic.loop = true
     this.$music.GameMusic.play()

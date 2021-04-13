@@ -24,10 +24,9 @@ export default {
   mounted () {
     this.$music.MenuMusic.autoplay = true
     this.$music.MenuMusic.loop = true
-    this.$music.MenuMusic.play()
-  },
-  destroyed () {
-    this.$music.MenuMusic.pause()
+    if (this.$music.MenuMusic.duration > 0 && this.$music.MenuMusic.paused) {
+      this.$music.MenuMusic.play()
+    }
   },
   methods: {
     isMobileDevice() {
