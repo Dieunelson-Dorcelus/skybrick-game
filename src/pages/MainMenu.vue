@@ -4,9 +4,9 @@
     <div class="Main">
       <p v-if="isMobileDevice()" style="color:red;font-weight:bold">We apologise, your browser is not supported 😭</p>
       <p v-if="isMobileDevice()">We are only available on PC</p>
-      <b-button class="Menu" variant="outline-primary" @click="$emit('skybrick-hurt-effect') && $router.push('/Play')" :disabled="isMobileDevice()">PLAY</b-button>
-      <b-button class="Menu" variant="outline-primary" @click="$router.push('/Help')">HELP</b-button>
-      <b-button class="Menu" variant="outline-primary" @click="$router.push('/Credits')">CREDITS</b-button>
+      <b-button class="Menu" variant="outline-primary" @click="$emit('skybrick-hurt-effect') && $router.push({name: 'Play'})" :disabled="isMobileDevice()">PLAY</b-button>
+      <b-button class="Menu" variant="outline-primary" @click="$router.push({name: 'Help'})">HELP</b-button>
+      <b-button class="Menu" variant="outline-primary" @click="$router.push({name: 'Credits'})">CREDITS</b-button>
       <a class="btn Menu btn-outline-primary" href="#">DONATION</a>
     </div>
     <p>

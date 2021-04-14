@@ -12,7 +12,9 @@ export default {
     this.$music.MenuMusic.pause()
     this.$music.GameMusic.autoplay = true
     this.$music.GameMusic.loop = true
+    if (this.$music.GameMusic.duration > 0 && this.$music.GameMusic.paused) {
     this.$music.GameMusic.play()
+    }
   },
   destroyed () {
     this.$music.GameMusic.pause()

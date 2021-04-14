@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import VueRouter from 'vue-router'
-
+import VueCompositionAPI from '@vue/composition-api'
 
 import App from '@/App.vue'
 import MainMenu from '@/pages/MainMenu'
@@ -14,6 +14,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import '@/assets/style.css'
 
+Vue.use(VueCompositionAPI)
 // Make BootstrapVue available throughout your project
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
@@ -33,10 +34,10 @@ Vue.prototype.$music = {
 Vue.config.productionTip = false
 
 const routes = [
-  { path: '/', component: MainMenu },
-  { path: '/Play', component: Play },
-  { path: '/Help', component: Help },
-  { path: '/Credits', component: Credits },
+  { name: 'MainMenu', path: '/', component: MainMenu },
+  { name: 'Play', path: '/Play', component: Play },
+  { name: 'Help', path: '/Help', component: Help },
+  { name: 'Credits', path: '/Credits', component: Credits },
   { path: '/*', redirect:'/' },
 ]
 
